@@ -30,7 +30,7 @@ def cache(key, duration):
         If called item in function, return item.
         If not return item and add to cache.
     """
-    def _cache(function):
+    def _cache(function):   # pylint: disable-msg=C0111
         def __cache(*args, **kwargs):
             if key in CACHE:
                 if (time.time() - CACHE[key]['time']) < duration:
